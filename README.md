@@ -1,2 +1,3 @@
 # Camara-de-la-madera
-proyecto para expo, camara de la madera
+proyecto para expo, camara de la madera.
+El sistema encuesta a los usuarios de la exposicion para calcular cuanto carbono emiten al año segun las actividades que desarrollan, en que se manejan, o que electrodomesticos usan. Con los datos hace un calculo de cuantos arboles deberia plantar el usuario para reparar el daño que hace con la emision de CO2. Luego muestra un QR que cuando lo escaneas te lleva a un pdf hosteado en linea. Este pdf te recomienda una cantidad de arboles que deberias plantar segun la emision de CO2 que tengas.
