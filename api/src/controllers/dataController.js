@@ -5,24 +5,35 @@ const createData = (req, res) =>{
     
     if (!body.transporte ||
         !body.distancia || 
-        !body.electrodomesticos || 
+        !body.electrodomesticos ||
         !body.alimentos || 
         !body.plantados)
         {
-            res.send("send all the fields !");
+            res.send("ningun campo puede quedar vacio!");
         }
-    const newData = {
-        transporte: body.transporte,
+    for(var i = 0; i <= 6; i++){
+        if (!body.electrodomesticos[i].nombre || !body.electrodomesticos[i].cantidad){
+            res.send("falta datos en el electrodomestico numero: " + i + " !")
+        }
+    }
+
+    newData = {
+        transporte : body.transporte,
         distancia : body.distancia,
         electrodomesticos : body.electrodomesticos,
-        alimentos : body.aliementos,
+        alimentos : body.alimentos,
         plantados : body.plantados
     };
-    
-    //const createdData = dataService.createData(newData);
-    console.log(body)
-    res.status(201).send({ status : "OK", data : body});
+    console.log(newData)
+    res.status(201).send({ status : "OK", info : "Generating PDF", data : newData});
 };
+
+//Generar pdf
+
+
+
+//subir a amazon y devolver url del objeto
+
 
 module.exports = {
     createData,
