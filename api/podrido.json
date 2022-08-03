@@ -1,0 +1,19 @@
+{
+    "medio-de-transporte" : "auto",
+    "distancia-semanal" : "25",
+    "electrodomesticos" :
+        {
+            "heladera" : "1",
+            "lavarropas" : "1",
+            "lavavajillas" : "0",
+            "secaropa" : "0",
+            "televisor" : "3",
+            "computadora" : "2",
+            "equipo de musica" : "1"
+        },
+
+    "alimentos consumidos" : "origen animal",
+    "arboles plantados" : "75"
+
+}
+
