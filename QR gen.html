@@ -1,0 +1,31 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+
+<div class="form">
+  <div id="qrcode-container">
+    <canvas id="qrcode" class="qrcode"></canvas>
+  </div>
+  <div>        
+    <input type="text" id="website">    
+ </div>    
+ <div> 
+    <button onclick="generateQRCode()">Submit</button>    
+ </div>     
+
+  <script type="text/javascript">
+    function generateQRCode() {
+      let website = document.getElementById("website").value;
+      if (website) {
+        let qrcodeContainer = document.getElementById("qrcode");
+        qrcodeContainer.innerHTML = "";
+        new QRious({
+          element: qrcodeContainer,
+          value: website
+        });
+        document.getElementById("qrcode-container").style.display = "block";
+      } else {
+        alert("Please enter a valid URL");
+      }
+    
+};
+  </script>
+</div>
