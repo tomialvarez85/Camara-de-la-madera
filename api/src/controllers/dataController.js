@@ -24,15 +24,33 @@ const createData = (req, res) =>{
         nutrition : body.nutrition,
         plantedTrees : body.plantedTrees
     };
-    console.log(newData)
-    //hacer calculos
-
-
-
-
-
-
     
+    //hacer calculos
+    function calculateVehicleCO2(value){
+        if(value == "car"){
+            //calculos para el auto
+        }
+        else if(value == "bus" ){
+
+        }
+    };
+
+    function calculateDistanceCO2(value){
+        return
+    };
+
+    function calculateDomesticAppliancesCO2(value){
+        return
+    };
+
+    function calculateNutrition(value){
+
+    };
+
+    function calculatePlantesTrees(value){
+        
+    };
+
     //Generar pdf
     var contenido = `<p>aca va la dataaaaaaa</p> ${newData.vehicle}`;
     pdf.create(contenido).toFile('./salida.pdf', function(err, res) {
