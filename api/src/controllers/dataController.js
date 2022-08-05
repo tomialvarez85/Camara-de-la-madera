@@ -26,22 +26,88 @@ const createData = (req, res) =>{
     };
     
     //hacer calculos
-    function calculateVehicleCO2(value){
-        if(value == "car"){
-            //calculos para el auto
+    function calculateVehicleCO2(vehicle, distance){
+        const weeksPerYear = 52
+        if(vehicle == "bus"){
+            const busEmission = 0.0284
+            var result = (busEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
         }
-        else if(value == "bus" ){
-
+        else if(vehicle == "naphthacar"){
+            const naphthacarEmission = 0.143
+            var result = (naphthacarEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
         }
+        else if(vehicle == "dieselcar"){
+            const dieselcarEmission = 0.132
+            var result = (dieselcarEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
+        }
+        else if(vehicle == "electriccar"){
+            const electriccarEmission = 0
+            var result = (electriccarEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
+        }
+        else if(vehicle == "motorbike"){
+            const motorbikeEmission = 0.167
+            var result = (motorbikeEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
+        }else if(vehicle == "bike"){
+            const bikeEmission = 0
+            var result = (bikeEmission * distance ) * weeksPerYear
+            return Math.trunc(result)
+        }
+        else{
+            res.status(406).send({ status : "ERROR", info : "The info sent doesnt match any possible vehicle option", vehicle : newData.vehicle});
+        }
+        
     };
 
-    function calculateDistanceCO2(value){
-        return
-    };
+    var vehicleEmission = calculateVehicleCO2(newData.vehicle, newData.distance)
+    console.log(vehicleEmission)
 
+    var domesticAppliancesEmission = calculateDomesticAppliancesCO2(newData.domesticAppliances)
+    console.log(domesticAppliancesEmission)
+    
     function calculateDomesticAppliancesCO2(value){
-        return
+        const daysPerYear = 365
+        const fridgeEmission = 0.9
+        const washingmachineEmission = 4.6
+        const dishwasherEmission = 4
+        const clothesdryerEmission = 7.4
+        const tvEmission = 1.2
+        const computerEmission = 1.9
+        const stereoEmission = 1.1
+        
+        var total = 0
+        var fridgeAmount = value[0].amount
+        var washingmachineAmount = value[1].amount
+        var dishwasherAmount = value[2].amount
+        var clothesdryerAmount = value[3].amount
+        var tvAmount = value[4].amount
+        var computerAmount = value[5].amount
+        var stereoAmount = value[6].amount
+        
+        var fridgeTotal = (fridgeEmission * daysPerYear ) * fridgeAmount
+        var washingmachineTotal = (washingmachineEmission * daysPerYear ) * washingmachineAmount
+        var dishwashertotal = (dishwasherEmission * daysPerYear ) * dishwasherAmount
+        var clothesdryertotal = (clothesdryerEmission * daysPerYear ) * clothesdryerAmount
+        var tvtotal = (tvEmission * daysPerYear) * tvAmount
+        var computertotal = (computerEmission * daysPerYear ) * computerAmount
+        var stereototal = (stereoEmission * daysPerYear) * stereoAmount
+        total = (
+            fridgeTotal + 
+            washingmachineTotal +
+            dishwashertotal + 
+            clothesdryertotal +
+            tvtotal +
+            computertotal + 
+            stereototal
+        )
+        return Math.trunc(total)
     };
+
+
 
     function calculateNutrition(value){
 
