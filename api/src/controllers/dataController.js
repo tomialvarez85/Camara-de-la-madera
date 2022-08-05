@@ -1,5 +1,6 @@
 const dataService = require("../services/dataService")
 var pdf = require('html-pdf');
+var uuid = require('uuid');
 
 const createData = (req, res) =>{
     const { body } = req;
@@ -63,12 +64,7 @@ const createData = (req, res) =>{
         
     };
 
-    var vehicleEmission = calculateVehicleCO2(newData.vehicle, newData.distance)
-    console.log(vehicleEmission)
-
-    var domesticAppliancesEmission = calculateDomesticAppliancesCO2(newData.domesticAppliances)
-    console.log(domesticAppliancesEmission)
-    
+   
     function calculateDomesticAppliancesCO2(value){
         const daysPerYear = 365
         const fridgeEmission = 0.9
@@ -109,17 +105,58 @@ const createData = (req, res) =>{
 
 
 
-    function calculateNutrition(value){
+    function calculateNutritionCO2(value){
+        daysPerYear = 365
+        if (value == "animal"){
+            const animalEmission = 4.55
+            var result = (animalEmission * daysPerYear )
+            return Math.trunc(result)
+        }
+        else if( value == "vegetal"){
+            const vegetalEmission = 4.32
+            var result = (vegetalEmission * daysPerYear )
+            return Math.trunc(result)
+        }
+        else if( value == "ultraprocessed"){
+            const ultraprocessedEmission = 4.78
+            var result = (ultraprocessedEmission * daysPerYear )
+            return Math.trunc(result)
 
+        }
+        else if( value == "proximity"){
+            const proximityEmission = 2.6
+            var result = (proximityEmission * daysPerYear )
+            return Math.trunc(result)
+
+        }
+        else if( value == "imported"){
+            const importedEmission = 5.2
+            var result = (importedEmission * daysPerYear )
+            return Math.trunc(result)
+        }
+        else{
+            res.status(406).send({ status : "ERROR", info : "The info sent doesnt match any possible nutrition option", nutrition : newData.nutrition});
+
+        }
     };
 
-    function calculatePlantesTrees(value){
-        
-    };
 
-    //Generar pdf
-    var contenido = `<p>aca va la dataaaaaaa</p> ${newData.vehicle}`;
-    pdf.create(contenido).toFile('./salida.pdf', function(err, res) {
+
+    var vehicleEmission = calculateVehicleCO2(newData.vehicle, newData.distance)
+
+    var domesticAppliancesEmission = calculateDomesticAppliancesCO2(newData.domesticAppliances)
+
+    var nutritionEmission = calculateNutritionCO2(newData.nutrition)
+
+    var emissionContrarested = newData.plantedTrees * 40
+    var totalEmission = (vehicleEmission + domesticAppliancesEmission + nutritionEmission ) - emissionContrarested
+
+    var treesShouldPlant = Math.trunc(totalEmission / 40)
+    console.log(treesShouldPlant)
+
+    
+    var contenido = `<p>tenes q pantar</p> ${treesShouldPlant}`;
+    pdf.create(contenido).toFile(`./pdf/${uuid.v4()}.pdf`, function(err, res) {
         if (err){
             console.log(err);
         } else {
