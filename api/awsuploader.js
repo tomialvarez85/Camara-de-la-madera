@@ -3,12 +3,6 @@ var uuid = require('uuid');
 var fs = require('fs');
 
 //aws configs
-AWS.config.update({
-    region: 'us-east-1',
-    accessKeyId: 'AKIAWU34ZNCTYT6M2KUT',
-    secretAccessKey: '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',
-  });
-
 
 //pdf read  and convert format
 const fileContent = fs.readFileSync('./ejemplo2.pdf');
