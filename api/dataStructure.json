@@ -1,0 +1,38 @@
+{
+    "vehicle" : "puto",
+    "distance" : "25",
+    "domesticAppliances" :
+        [   
+            {
+                "name" : "fridge",
+                "amount" : 2
+            },
+            {
+                "name" : "washingMachine",
+                "amount" : 1
+            },
+            {
+                "name" : "dishWasher",
+                "amount" : 1
+            },
+            {
+                "name" : "clothesDryer",
+                "amount" : 1
+            },
+            {
+                "name" : "tv",
+                "amount" : 3
+            },
+            {
+                "name" : "pc",
+                "amount" : 2
+            },
+            {
+                "name" : "stereo",
+                "amount" : 1
+            }
+        ],
+
+    "nutrition" : "carnio",
+    "plantedTrees" : "75"
+}
