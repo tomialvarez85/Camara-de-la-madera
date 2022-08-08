@@ -1,0 +1,40 @@
+{
+    "transporte" : "auto",
+    "distancia" : "25",
+    "electrodomesticos" :
+        [   
+            {
+                "nombre" : "heladera",
+                "cantidad" : "1"
+            },
+            {
+                "nombre" : "lavarropas",
+                "cantidad" : "1" 
+            },
+            {
+                "nombre" : "lavavajillas",
+                "cantidad" : "1"
+            },
+            {
+                "nombre" : "secaropas",
+                "cantidad" : "1"
+            },
+            {
+                "nombre" : "televisor",
+                "cantidad" : "3"
+            },
+            {
+                "nombre" : "computadora",
+                "cantidad" : "2"
+            },
+            {
+                "nombre" : "equipo de musica",
+                "cantidad" : "1"
+            }
+        ],
+
+    "alimentos" : "origen animal",
+    "plantados" : "75"
+
+}
+

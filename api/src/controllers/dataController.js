@@ -15,10 +15,13 @@ const createData = async (req, res) =>{
         !body.domesticAppliances ||
         !body.nutrition || 
         !body.plantedTrees)
+
         {
             res.send("ningun campo puede quedar vacio!");
         }
     for(var i = 0; i <= 6; i++){
+
+      
         if (!body.domesticAppliances[i].name || !body.domesticAppliances[i].amount){
             res.send("falta datos en el electrodomestico numero: " + i + " !")
         }
