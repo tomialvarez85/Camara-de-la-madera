@@ -18,8 +18,8 @@ async function uploadPdfToS3(pdfid){
     };
 
     const bucket = new AWS.S3({
-      accessKeyId: "AKIAWU34ZNCTU2EWKC4S",
-      secretAccessKey: "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",
+      accessKeyId: "",
+      secretAccessKey: "",
       region: "us-east-1"
     })
 
