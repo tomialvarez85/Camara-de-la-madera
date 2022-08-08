@@ -2,43 +2,30 @@ var AWS = require("aws-sdk");
 var uuid = require('uuid');
 var fs = require('fs');
 
-//aws configs
-AWS.config.update({
-    region: 'us-east-1',
-    accessKeyId: '',
-    secretAccessKey: '',
-  });
-
 
 //pdf read  and convert format
 //const fileContent = fs.readFileSync('./ejemplo2.pdf');
-
-
 var bucketName = 'nuevitocecf4c04-af40-4f35-b878-4cdae495101a';
-var keyName = uuid.v4();
-var bucketPromise = new AWS.S3({ apiVersion: '2006-03-01' }).createBucket({ Bucket: bucketName }).promise()
 
+async function uploadPdfToS3(pdfid){
+    var fileContent = fs.readFileSync(`C:/Users/Usuario/Desktop/Camara-de-la-madera/api/pdf/${pdfid}.pdf`);
+    
+    var objectParams = {
+      Bucket: bucketName, 
+      Key: pdfid, 
+      Body: fileContent,
+      ContentType : 'application/pdf',
+    };
 
-bucketPromise.then(
-    function(data) {
-      // Create params for putObject call
-      var objectParams = {
-        Bucket: bucketName, 
-        Key: keyName, 
-        Body: fileContent,
-        ContentType : 'application/pdf',
-        };
-      // Create object upload promise
-      var uploadPromise = new AWS.S3({apiVersion: '2006-03-01'}).upload(objectParams).promise();
-      uploadPromise.then(
-        function(data) {
-          console.log("Successfully uploaded data to " + bucketName + ".s3.amazonaws.com/" + keyName);
-          //urlToQr = (bucketName + ".s3.amazonaws.com/" + keyName);
-        });
-  }).catch(
-    function(err) {
-      console.error(err, err.stack);
-  });
+    const bucket = new AWS.S3({
+      accessKeyId: "AKIAWU34ZNCTU2EWKC4S",
+      secretAccessKey: "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",
+      region: "us-east-1"
+    })
 
+    // Create object upload promise
+    var uploadPromise = await bucket.upload(objectParams).promise();
+    return uploadPromise;
+}
 
-module.exports = {bucketPromise};
+module.exports = {uploadPdfToS3};

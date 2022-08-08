@@ -1,9 +1,14 @@
-var pdf = require('html-pdf');
+//var pdf = require('html-pdf');
 var uuid = require('uuid');
 const co2calculator = require ('../co2calculator.js');
 const awsuploader = require('../awsuploader')
+const fs = require('fs')
+const Promise = require('bluebird');
+const pdf = Promise.promisifyAll(require('html-pdf'));
+var ejs = require('ejs');
 
-const createData = (req, res) =>{
+
+const createData = async (req, res) =>{ 
     const { body } = req;
     if (!body.vehicle ||
         !body.distance || 
@@ -37,22 +42,34 @@ const createData = (req, res) =>{
     var totalEmission = (vehicleEmission + domesticAppliancesEmission + nutritionEmission ) - emissionContrarested
 
     var treesShouldPlant = Math.trunc(totalEmission / 40)
-    console.log(treesShouldPlant)
+
+    console.log("total User emission: " + totalEmission + " CO2 kg")
+    console.log("User shoul Plant : " + treesShouldPlant + " trees")
+
 
     
-    var contenido = `<p>tenes q pantar</p> ${treesShouldPlant}`;
-    pdf.create(contenido).toFile(`./pdf/${uuid.v4()}.pdf`, function(err, res) {
-        if (err){
-            console.log(err);
-        } else {
-            console.log(res);
-        }
-    });
+    var compiled = ejs.compile(fs.readFileSync(__dirname + '/template.html', 'utf8'));
+    var html = compiled({ emission : totalEmission, treesShoulPlant : treesShouldPlant})
+    var pdfid = uuid.v4()
+    pdfPath = (`./pdf/${pdfid}.pdf`)
 
-    //consumir el uploader y subir 
+    async function pdfGenerator(){
+        var res = await pdf.createAsync(html, {filename: pdfPath});
+        console.log("pdf generated at " + res.filename);
+    }
+
+    await pdfGenerator();
+    var amazonResponse = await awsuploader.uploadPdfToS3(pdfid)
+    res.status(201).send({ status : "OK", objectURL: amazonResponse});
     
-    res.status(201).send({ status : "OK", info : "devolver url del objeto en el s3", data : newData});
-};
+    //delete pdf from server (is already allowed in the s3 bucket)
+    try {
+        fs.unlinkSync(pdfPath)
+            console.log("file deleted from server")
+      } catch(err) {
+        console.error("error deleting file from server: " + err)
+      }
+    };
 
 
 module.exports = {

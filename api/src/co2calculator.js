@@ -112,3 +112,4 @@ function calculateNutritionCO2(value){
 };
 
 module.exports = {calculateVehicleCO2, calculateDomesticAppliancesCO2, calculateNutritionCO2};
+
