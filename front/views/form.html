@@ -8,115 +8,103 @@
     <title>Formulariohc</title>
 </head>
 <body class="body-form">
-    <nav>
-        <div class="container-logo">
-            <img class="logo" src="../img/cammec-1.png" alt="IMG">
-        </div>
-    </nav>
     <main>
-        <div class="container">
-            <a href="../index.html">Encuesta</a>
-            <section class="section-one">
-                <h3>1 - Medio de Transporte mas utilizado(Puede marcar varios).</h3>
+        <form action="#" method="post" class="container">
+            <fieldset class="fieldset-one">
+                <h3>1 - Medio de Transporte mas utilizado.</h3>
                 <label>
-                    <input type="radio" value="1"> Transporte Publico
+                    <input type="radio" value="1" name="vehiculo"> Transporte Publico
                 </label>
                 <label>
-                    <input type="radio" value="2"> Vehiculo Propio Naftero
+                    <input type="radio" value="2" name="vehiculo"> Vehiculo Propio Naftero
                 </label>
                 <label>
-                    <input type="radio" value="3"> Vehiculo Propoio Diesel
+                    <input type="radio" value="3" name="vehiculo"> Vehiculo Propoio Diesel
                 </label>
                 <label>
-                    <input type="radio" value="4"> Vehiculo Propoio Electrico
+                    <input type="radio" value="4" name="vehiculo"> Vehiculo Propoio Electrico
                 </label>
                 <label>
-                    <input type="radio" value="5"> Motocicleta
+                    <input type="radio" value="5" name="vehiculo"> Motocicleta
                 </label>
                 <label>
-                    <input type="radio" value="6"> Bicicleta
+                    <input type="radio" value="6" name="vehiculo"> Bicicleta
                 </label>
-            </section>
-            <section class="section-two">
+            </fieldset>
+            <fieldset class="fieldset-two">
                 <h3>2 - Distancia recorrida por semana.</h3>
                 <label>
-                    <input type="radio" value="1"> 0-50km
+                    <input type="radio" value="1" name="distanciar"> 0-50km
                 </label>
                 <label>
-                    <input type="radio" value="2"> 50-100km
+                    <input type="radio" value="2" name="distanciar"> 50-100km
                 </label>
                 <label>
-                    <input type="radio" value="3"> 100-150km
+                    <input type="radio" value="3" name="distanciar"> 100-150km
                 </label>
                 <label>
-                    <input type="radio" value="4"> Mas de 150km
+                    <input type="radio" value="4" name="distanciar"> Mas de 150km
                 </label>
-            </section>
-            <section class="section-three">
+            </fieldset>
+            <fieldset class="fieldset-three">
                 <h3>3 - Seleccione los electrodomesticos y la cantidad de estos que posee en su casa(Puede marcar varios).</h3>
                 <label>
                     <input type="radio" value="1"> Heladera
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="2"> Lavarropas
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="3"> Lavavajilla
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="4"> Secarropas
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="5"> Televisor
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="6"> Computadora
                 </label>
-                <hr>
                 <label>
                     <input type="radio" value="7"> Equipo de Musica
                 </label>
-            </section>
-            <section class="section-four">
+            </fieldset>
+            <fieldset class="fieldset-four">
                 <h3>4 - Alimentos consumidos preferentemente.</h3>
                 <label>
-                    <input type="radio" value="1"> Origen Animal
+                    <input type="radio" value="1" name="alimento"> Origen Animal
                 </label>
                 <label>
-                    <input type="radio" value="2"> Origen Vegetal
+                    <input type="radio" value="2" name="alimento"> Origen Vegetal
                 </label>
                 <label>
-                    <input type="radio" value="3"> Ultra Procesados
+                    <input type="radio" value="3" name="alimento"> Ultra Procesados
                 </label>
                 <label>
-                    <input type="radio" value="4"> De Proximidad
+                    <input type="radio" value="4" name="alimento"> De Proximidad
                 </label>
                 <label>
-                    <input type="radio" value="5"> Importados
+                    <input type="radio" value="5" name="alimento"> Importados
                 </label>
-            </section>
-            <section class="section-five">
+            </fieldset>
+            <fieldset class="fieldset-five">
                 <h3>5 - Cuantos arboles ha plantado.</h3>
                 <label>
-                    <input type="radio" value="1"> Ninguno
+                    <input type="radio" value="1" name="cantarboles"> Ninguno
                 </label>
                 <label>
-                    <input type="radio" value="2"> 0-5
+                    <input type="radio" value="2" name="cantarboles"> 0-5
                 </label>
                 <label>
-                    <input type="radio" value="3"> 5-10
+                    <input type="radio" value="3" name="cantarboles"> 5-10
                 </label>
                 <label>
-                    <input type="radio" value="4"> Mas de 10
+                    <input type="radio" value="4" name="cantarboles"> Mas de 10
                 </label>
-            </section>
+            </fieldset>
             <button class="btn-enviar">Enviar</button>
-        </div>
+        </form>
     </main>
 
     <script src="../js/index.js"></script>

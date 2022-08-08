@@ -25,11 +25,12 @@
     font-family: 'Niramit', sans-serif;
     margin: 0;
     font-size: 3.5em;
-    font-weight: 400;
+    font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 15%);
     color: #FFF;
+    white-space: nowrap;
 }
 
 .h3-index{
@@ -60,6 +61,11 @@ a{
     line-height: 50px;
     text-align: center;
     border-radius: 15px;
+    cursor: pointer;
+}
+
+a:hover{
+    background-color: rgba(0, 0, 0, 0.9);
 }
 
 /* Form */
@@ -75,7 +81,6 @@ nav{
     position: fixed;
     width: 100%;
     height: 100px;
-    padding: 10px 40px;
     box-sizing: border-box;
     background: rgba(0, 50, 0, 0.8);
     border-bottom: 1px solid #fff;
@@ -93,66 +98,64 @@ nav{
 }
 
 .container{
-    max-width: 700px;
+    width: 50%;
     margin: auto;
-    padding: 20px;
+    overflow: auto;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 30px;
+    margin-top: 13px;
 }
 
-.section-one{
-    border: 2px solid #398C0E;
+.container::-webkit-scrollbar{
+    width: 7px;
+    background: rgba(0, 0, 1, 0.8);
+}
+
+.fieldset-one{
+    text-align: left;
     border-radius: 7px;
-    margin-top: 80px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
 }
 
-.section-two{
-    border: 2px solid #398C0E;
-    border-radius: 7px;
-    margin-top: 1px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
-}
-
-.section-three{
-    border: 2px solid #398C0E;
+.fieldset-two{
     border-radius: 7px;
     margin-top: 1px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
 }
 
-.section-four{
-    border: 2px solid #398C0E;
+.fieldset-three{
     border-radius: 7px;
     margin-top: 1px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
 }
 
-.section-five{
-    border: 2px solid #398C0E;
+.fieldset-four{
     border-radius: 7px;
     margin-top: 1px;
-    color: #fff;
-    background-color: rgba(0, 0, 0, 0.4);
+    color: #000;
+}
+
+.fieldset-five{
+    border-radius: 7px;
+    margin-top: 1px;
+    color: #000;
 }
 
 h3{
+    text-align: center;
     font-family: 'Niramit', sans-serif;
-    font-weight: 100;
-}
-
-input{
-    font-family: 'Niramit', sans-serif;
+    font-weight: 400;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 label{
+    font-family: 'Niramit', sans-serif;
     display: block;
     padding: 7px;
     border-radius: 7px;
     cursor: pointer;
-    border: 1px dashed #ccc;
     margin-bottom: 3px;
 }
 
@@ -161,19 +164,20 @@ label:hover{
 }
 
 .btn-enviar{
-    width: 80%;
+    width: 60%;
     display: block;
     margin: auto;
     padding: 10px;
     margin-top: 5px;
-    background-color: #76d7c8;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 20px;
 }
 
 .btn-enviar:hover{
-    background-color: #000;
+    background: rgba(0, 0, 0, 0.9);
     color: #fff;
     transition: all .3s;
     transform: scale(1.1);
