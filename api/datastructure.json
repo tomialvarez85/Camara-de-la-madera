@@ -1,40 +1,38 @@
 {
-    "transporte" : "auto",
-    "distancia" : "25",
-    "electrodomesticos" :
+    "vehicle" : "puto",
+    "distance" : "25",
+    "domesticAppliances" :
         [   
             {
-                "nombre" : "heladera",
-                "cantidad" : "1"
+                "name" : "fridge",
+                "amount" : 2
             },
             {
-                "nombre" : "lavarropas",
-                "cantidad" : "1" 
+                "name" : "washingMachine",
+                "amount" : 1
             },
             {
-                "nombre" : "lavavajillas",
-                "cantidad" : "1"
+                "name" : "dishWasher",
+                "amount" : 1
             },
             {
-                "nombre" : "secaropas",
-                "cantidad" : "1"
+                "name" : "clothesDryer",
+                "amount" : 1
             },
             {
-                "nombre" : "televisor",
-                "cantidad" : "3"
+                "name" : "tv",
+                "amount" : 3
             },
             {
-                "nombre" : "computadora",
-                "cantidad" : "2"
+                "name" : "pc",
+                "amount" : 2
             },
             {
-                "nombre" : "equipo de musica",
-                "cantidad" : "1"
+                "name" : "stereo",
+                "amount" : 1
             }
         ],
 
-    "alimentos" : "origen animal",
-    "plantados" : "75"
-
+    "nutrition" : "carnio",
+    "plantedTrees" : "75"
 }
-
