@@ -20,8 +20,6 @@ const createData = async (req, res) =>{
             res.send("ningun campo puede quedar vacio!");
         }
     for(var i = 0; i <= 6; i++){
-
-      
         if (!body.domesticAppliances[i].name || !body.domesticAppliances[i].amount){
             res.send("falta datos en el electrodomestico numero: " + i + " !")
         }
@@ -47,7 +45,7 @@ const createData = async (req, res) =>{
     var treesShouldPlant = Math.trunc(totalEmission / 40)
 
     console.log("total User emission: " + totalEmission + " CO2 kg")
-    console.log("User shoul Plant : " + treesShouldPlant + " trees")
+    console.log("User should Plant : " + treesShouldPlant + " trees")
 
 
     
@@ -55,11 +53,12 @@ const createData = async (req, res) =>{
     var html = compiled({ emission : totalEmission, treesShoulPlant : treesShouldPlant})
     var pdfid = uuid.v4()
     pdfPath = (`./pdf/${pdfid}.pdf`)
-
     async function pdfGenerator(){
-        var res = await pdf.createAsync(html, {filename: pdfPath});
+        var res = await pdf.createAsync(html,{height : '7.355in', width : '5.19in', filename: pdfPath});
         console.log("pdf generated at " + res.filename);
     }
+
+    //height : '7.64in', width : '5.21in',
 
     await pdfGenerator();
     var amazonResponse = await awsuploader.uploadPdfToS3(pdfid)
