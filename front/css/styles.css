@@ -3,14 +3,13 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* INDEX */
 
 .div-index{
-    background-image: url('https://www.wallpaperuse.com/wallp/67-674704_m.jpg');
+    background-image: url('https://s1.1zoom.me/b5054/175/Forests_Spring_Trees_Trunk_tree_Trail_563011_1920x1080.jpg');
+    background-position-x: top;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -36,9 +35,9 @@
 .h3-index{
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-52%);
     font-family: 'Niramit', sans-serif;
     font-size: 1.4em;
     font-weight: 500;
@@ -71,7 +70,7 @@ a:hover{
 /* Form */
 
 .body-form{
-    background-image: url('https://www.wallpaperuse.com/wallp/67-674704_m.jpg');
+    background-image: url('https://s1.1zoom.me/b5054/175/Forests_Spring_Trees_Trunk_tree_Trail_563011_1920x1080.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -86,25 +85,13 @@ nav{
     border-bottom: 1px solid #fff;
 }
 
-.container-logo{
-    width: 25%;
-    height: 80px;
-    float: left;
-}
-
-.logo{
-    width: 100%;
-    height: 100%;
-}
-
 .container{
     width: 50%;
     margin: auto;
     overflow: auto;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 30px;
-    margin-top: 13px;
 }
 
 .container::-webkit-scrollbar{
