@@ -9,7 +9,7 @@
 </head>
 <body class="body-form">
     <main>
-        <form action="https://reqres.in/api/users" method="post" class="container">
+        <form class="container">
             <fieldset class="fieldset-one">
                 <h3>1 - Medio de Transporte mas utilizado.</h3>
                 <label>
@@ -34,22 +34,30 @@
             <fieldset class="fieldset-two">
                 <h3>2 - Distancia recorrida por semana.</h3>
                 <label>
-                    <input type="radio" value="1" name="distance"> 0-50km
+                    <input type="radio" value="25" name="distance"> 0-50km
                 </label>
                 <label>
-                    <input type="radio" value="2" name="distance"> 50-100km
+                    <input type="radio" value="75" name="distance"> 50-100km
                 </label>
                 <label>
-                    <input type="radio" value="3" name="distance"> 100-150km
+                    <input type="radio" value="125" name="distance"> 100-150km
                 </label>
                 <label>
-                    <input type="radio" value="4" name="distance"> Mas de 150km
+                    <input type="radio" value="200" name="distance"> Mas de 150km
                 </label>
             </fieldset>
             <fieldset class="fieldset-three">
                 <h3>3 - Seleccione los electrodomesticos y la cantidad de estos que posee en su casa(Puede marcar varios).</h3>
                 <label>
                     <input type="checkbox" value="fridge" name="domesticAppliances"> Heladera
+                    <details>
+                        <summary>Cantidad</summary>
+                        <input type="radio" value="0" name="amount" id="frcero"> 0
+                        <input type="radio" value="1" name="amount" id="frone"> 1
+                        <input type="radio" value="2" name="amount" id="frtwo"> 2
+                        <input type="radio" value="3" name="amount" id="frthree"> 3
+                        <input type="radio" value="5" name="amount" id="frmtt"> +3
+                    </details>
                 </label>
                 <label>
                     <input type="checkbox" value="washingMAchine" name="domesticAppliances"> Lavarropas
@@ -91,16 +99,16 @@
             <fieldset class="fieldset-five">
                 <h3>5 - Cuantos arboles ha plantado.</h3>
                 <label>
-                    <input type="radio" value="1" name="plantedTrees"> Ninguno
+                    <input type="radio" value="0" name="plantedTrees"> Ninguno
                 </label>
                 <label>
-                    <input type="radio" value="2" name="plantedTrees"> 0-5
+                    <input type="radio" value="3" name="plantedTrees"> 0-5
                 </label>
                 <label>
-                    <input type="radio" value="3" name="plantedTrees"> 5-10
+                    <input type="radio" value="7" name="plantedTrees"> 5-10
                 </label>
                 <label>
-                    <input type="radio" value="4" name="plantedTrees"> Mas de 10
+                    <input type="radio" value="15" name="plantedTrees"> Mas de 10
                 </label>
             </fieldset>
             <button class="btn-enviar">Enviar</button>

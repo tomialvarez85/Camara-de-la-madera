@@ -95,8 +95,11 @@ nav{
 }
 
 .container::-webkit-scrollbar{
-    width: 7px;
-    background: rgba(0, 0, 1, 0.8);
+    display: none;
+}
+
+.check::content::after{
+    background-color: red;
 }
 
 .fieldset-one{

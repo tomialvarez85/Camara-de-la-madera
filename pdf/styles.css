@@ -21,7 +21,8 @@ div{
     flex-direction: column;
     justify-content: center;
     align-content: center;
-    background-color: #0FBB60;
+    background-image: url('./dever.jpeg');
+    background-size: cover;
     height: 60%;
     width: 75%;
     border-bottom-left-radius: 50px;
