@@ -8,7 +8,7 @@ var fs = require('fs');
 var bucketName = 'nuevitocecf4c04-af40-4f35-b878-4cdae495101a';
 
 async function uploadPdfToS3(pdfid){
-    var fileContent = fs.readFileSync(`C:/Users/Usuario/Desktop/Camara-de-la-madera/api/pdf/${pdfid}.pdf`);
+    var fileContent = fs.readFileSync(`./pdf/${pdfid}.pdf`);
     
     var objectParams = {
       Bucket: bucketName, 
@@ -17,11 +17,7 @@ async function uploadPdfToS3(pdfid){
       ContentType : 'application/pdf',
     };
 
-    const bucket = new AWS.S3({
-      accessKeyId: "",
-      secretAccessKey: "",
-      region: "us-east-1"
-    })
+    
 
     // Create object upload promise
     var uploadPromise = await bucket.upload(objectParams).promise();

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./styles.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>pdfTemplate</title>
     <style>
 
 *{
@@ -14,9 +13,9 @@
 }
 
 .container{
-    background-image: url('https://nuevitocecf4c04-af40-4f35-b878-4cdae495101a.s3.amazonaws.com/fondofinal.jpg');
+    background-image: url('https://nuevitocecf4c04-af40-4f35-b878-4cdae495101a.s3.amazonaws.com/fondofinal+(1).jpg');
     width: 620px;
-    height: 877px;
+    height: 842px;
     display: flex;
     justify-content: center;
     margin: auto;
@@ -31,7 +30,7 @@
     background-repeat: no-repeat;
     height: 60%;
     width: 75%;
-    margin-left: 80px;
+    margin-left: 67px;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
@@ -101,13 +100,13 @@ h3{
     <div class="container">
         <div class="bg">
             <div class="primero">
-                <p class="p-one">Tu actividad diaria genera<br>X kilos de CO2 por año.</p>
+                <p class="p-one">Tu actividad diaria genera<%= emission%> <br>kilos de CO2 por año.</p>
             </div>
-            <div class="segundo">
+            <div class="segundo">  
                 <p class="p-two">Para compensar la emisión<br>deberías plantar</p>
             </div>
             <div class="tercero">
-                <h1>X</h1>
+                <h1> <%= treesShouldPlant%> </h1>
             </div>
             <div class="cuarto">
                 <h3>ARBOLES</h3>
