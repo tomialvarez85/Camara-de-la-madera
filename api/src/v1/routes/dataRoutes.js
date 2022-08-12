@@ -3,7 +3,7 @@ const router = express.Router();
 const dataController = require('../../controllers/dataController');
 
 router
-    .post('/' , dataController.createData);
+    .post('/data' , dataController.createData);
 
 
 module.exports = router;

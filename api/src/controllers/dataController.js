@@ -6,7 +6,8 @@ const fs = require('fs')
 const Promise = require('bluebird');
 const pdf = Promise.promisifyAll(require('html-pdf'));
 var ejs = require('ejs');
-
+const path = require('path');
+const { response } = require('express');
 
 const createData = async (req, res) =>{ 
     const { body } = req;
@@ -49,12 +50,12 @@ const createData = async (req, res) =>{
 
 
     
-    var compiled = ejs.compile(fs.readFileSync(__dirname + '/template.html', 'utf8'));
-    var html = compiled({ emission : totalEmission, treesShoulPlant : treesShouldPlant})
+    var compiled = ejs.compile(fs.readFileSync(path.resolve(__dirname, '../../public/pdfTemplate.html'),'utf8'));
+    var html = compiled({ emission : totalEmission, treesShouldPlant : treesShouldPlant})
     var pdfid = uuid.v4()
     pdfPath = (`./pdf/${pdfid}.pdf`)
     async function pdfGenerator(){
-        var res = await pdf.createAsync(html,{height : '7.355in', width : '5.19in', filename: pdfPath});
+        var res = await pdf.createAsync(html,{height : '7.36in', width : '5.19in', filename: pdfPath});
         console.log("pdf generated at " + res.filename);
     }
 
@@ -62,14 +63,16 @@ const createData = async (req, res) =>{
 
     await pdfGenerator();
     var amazonResponse = await awsuploader.uploadPdfToS3(pdfid)
-    res.status(201).send({ status : "OK", objectURL: amazonResponse});
+    console.log(amazonResponse)
+    res.send({ objectURL: amazonResponse.Location});
     
+
     //delete pdf from server (is already allowed in the s3 bucket)
     try {
         fs.unlinkSync(pdfPath)
-            console.log("file deleted from server")
+            console.log("file deleted from API server")
       } catch(err) {
-        console.error("error deleting file from server: " + err)
+        console.error("error deleting file from API server: " + err)
       }
     };
 
