@@ -3,6 +3,9 @@ var uuid = require('uuid');
 var fs = require('fs');
 
 
+
+
+
 //pdf read  and convert format
 //const fileContent = fs.readFileSync('./ejemplo2.pdf');
 var bucketName = 'nuevitocecf4c04-af40-4f35-b878-4cdae495101a';
@@ -17,7 +20,11 @@ async function uploadPdfToS3(pdfid){
       ContentType : 'application/pdf',
     };
 
-    
+    const bucket = new AWS.S3({
+      region: 'us-east-1',
+      accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    })
 
     // Create object upload promise
     var uploadPromise = await bucket.upload(objectParams).promise();
@@ -25,3 +32,4 @@ async function uploadPdfToS3(pdfid){
 }
 
 module.exports = {uploadPdfToS3};
+
