@@ -1,5 +1,5 @@
 const express = require('express');
-const v1DataRouter = require ('../src/v1/routes/dataRoutes.js');
+const v1DataRouter = require ('./src/v1/routes/dataRoutes.js');
 const path = require('path')
 
 const app = express();
