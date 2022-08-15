@@ -20,11 +20,6 @@ const createData = async (req, res) =>{
         {
             res.send("ningun campo puede quedar vacio!");
         }
-    for(var i = 0; i <= 6; i++){
-        if (!body.domesticAppliances[i].name || !body.domesticAppliances[i].amount){
-            res.send("falta datos en el electrodomestico numero: " + i + " !")
-        }
-    }
 
     newData = {
         vehicle : body.vehicle,
@@ -33,6 +28,8 @@ const createData = async (req, res) =>{
         nutrition : body.nutrition,
         plantedTrees : body.plantedTrees
     };
+
+    console.log(newData)
     
     var vehicleEmission = co2calculator.calculateVehicleCO2(newData.vehicle, newData.distance)
 
