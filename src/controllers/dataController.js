@@ -18,7 +18,7 @@ const createData = async (req, res) =>{
         !body.plantedTrees)
 
         {
-            res.send("ningun campo puede quedar vacio!");
+            res.send("send the data for all fields !");
         }
 
     newData = {
@@ -29,7 +29,6 @@ const createData = async (req, res) =>{
         plantedTrees : body.plantedTrees
     };
 
-    console.log(newData)
     
     var vehicleEmission = co2calculator.calculateVehicleCO2(newData.vehicle, newData.distance)
 
