@@ -8,117 +8,104 @@
     <title>Formulariohc</title>
 </head>
 <body class="body-form">
-    <nav>
-        <div class="container-logo">
-            <img class="logo" src="../img/cammec-1.png" alt="IMG">
-        </div>
-    </nav>
     <main>
-        <div class="container">
-            <a href="../index.html">Encuesta</a>
-            <section class="section-one">
-                <h3>1 - Medio de Transporte mas utilizado(Puede marcar varios).</h3>
-                <label>
-                    <input type="radio" value="1"> Transporte Publico
+        <form class="container">
+            <fieldset class="fieldset-one" id="fone">
+                <h3>1 - Medio de Transporte mas utilizado.</h3>
+                <label for="tp">
+                    <input type="radio" value="bus" name="vehicle" id="tp">Transporte Publico
                 </label>
-                <label>
-                    <input type="radio" value="2"> Vehiculo Propio Naftero
+                <label for="vpn">
+                    <input type="radio" value="naphthacar" name="vehicle" id="vpn">Vehiculo Propio Naftero                    
                 </label>
-                <label>
-                    <input type="radio" value="3"> Vehiculo Propoio Diesel
+                <label for="vpd">
+                    <input type="radio" value="dieselcar" name="vehicle" id="vpd">Vehiculo Propio Diesel                    
                 </label>
-                <label>
-                    <input type="radio" value="4"> Vehiculo Propoio Electrico
+                <label for="vpe">
+                    <input type="radio" value="electriccar" name="vehicle" id="vpe">Vehiculo Propio Electrico                    
                 </label>
-                <label>
-                    <input type="radio" value="5"> Motocicleta
+                <label for="mt">
+                    <input type="radio" value="motorbike" name="vehicle" id="mt">Motocicleta
                 </label>
-                <label>
-                    <input type="radio" value="6"> Bicicleta
+                <label for="bc">
+                    <input type="radio" value="bike" name="vehicle" id="bc">Bicicleta        
                 </label>
-            </section>
-            <section class="section-two">
+            </fieldset>
+            <fieldset class="fieldset-two">
                 <h3>2 - Distancia recorrida por semana.</h3>
                 <label>
-                    <input type="radio" value="1"> 0-50km
+                    <input type="radio" value="25" name="distance"> 0-50km
                 </label>
                 <label>
-                    <input type="radio" value="2"> 50-100km
+                    <input type="radio" value="75" name="distance"> 50-100km
                 </label>
                 <label>
-                    <input type="radio" value="3"> 100-150km
+                    <input type="radio" value="125" name="distance"> 100-150km
                 </label>
                 <label>
-                    <input type="radio" value="4"> Mas de 150km
+                    <input type="radio" value="200" name="distance"> Mas de 150km
                 </label>
-            </section>
-            <section class="section-three">
+            </fieldset>
+            <fieldset class="fieldset-three">
                 <h3>3 - Seleccione los electrodomesticos y la cantidad de estos que posee en su casa(Puede marcar varios).</h3>
                 <label>
-                    <input type="radio" value="1"> Heladera
+                    <input type="checkbox" value="fridge" name="domesticAppliances" id="aaa"> Heladera
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="2"> Lavarropas
+                    <input type="checkbox" value="washingMachine" name="domesticAppliances" id="bbb"> Lavarropas
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="3"> Lavavajilla
+                    <input type="checkbox" value="dishWasher" name="domesticAppliances" id="ccc"> Lavavajilla
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="4"> Secarropas
+                    <input type="checkbox" value="clothesDryer" name="domesticAppliances" id="ddd"> Secarropas
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="5"> Televisor
+                    <input type="checkbox" value="tv" name="domesticAppliances" id="eee"> Televisor
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="6"> Computadora
+                    <input type="checkbox" value="pc" name="domesticAppliances" id="fff"> Computadora
                 </label>
-                <hr>
                 <label>
-                    <input type="radio" value="7"> Equipo de Musica
+                    <input type="checkbox" value="stereo" name="domesticAppliances" id="ggg"> Equipo de Musica
                 </label>
-            </section>
-            <section class="section-four">
+            </fieldset>
+            <fieldset class="fieldset-four">
                 <h3>4 - Alimentos consumidos preferentemente.</h3>
                 <label>
-                    <input type="radio" value="1"> Origen Animal
+                    <input type="radio" value="animal" name="nutrition"> Origen Animal
                 </label>
                 <label>
-                    <input type="radio" value="2"> Origen Vegetal
+                    <input type="radio" value="vegetal" name="nutrition"> Origen Vegetal
                 </label>
                 <label>
-                    <input type="radio" value="3"> Ultra Procesados
+                    <input type="radio" value="ultraprocessed" name="nutrition"> Ultra Procesados
                 </label>
                 <label>
-                    <input type="radio" value="4"> De Proximidad
+                    <input type="radio" value="proximity" name="nutrition"> De Proximidad
                 </label>
                 <label>
-                    <input type="radio" value="5"> Importados
+                    <input type="radio" value="imported" name="nutrition"> Importados
                 </label>
-            </section>
-            <section class="section-five">
+            </fieldset>
+            <fieldset class="fieldset-five">
                 <h3>5 - Cuantos arboles ha plantado.</h3>
                 <label>
-                    <input type="radio" value="1"> Ninguno
+                    <input type="radio" value="0" name="plantedTrees"> Ninguno
                 </label>
                 <label>
-                    <input type="radio" value="2"> 0-5
+                    <input type="radio" value="3" name="plantedTrees"> 0-5
                 </label>
                 <label>
-                    <input type="radio" value="3"> 5-10
+                    <input type="radio" value="7" name="plantedTrees"> 5-10
                 </label>
                 <label>
-                    <input type="radio" value="4"> Mas de 10
+                    <input type="radio" value="15" name="plantedTrees"> Mas de 10
                 </label>
-            </section>
+            </fieldset>
             <button class="btn-enviar">Enviar</button>
-        </div>
+        </form>
     </main>
-
     <script src="../js/index.js"></script>
 </body>
 </html>
