@@ -8,7 +8,7 @@
 /* INDEX */
 
 .div-index{
-    background-image: url('https://s1.1zoom.me/b5054/175/Forests_Spring_Trees_Trunk_tree_Trail_563011_1920x1080.jpg');
+    background-image: url('https://i.pinimg.com/originals/9b/5c/b7/9b5cb7b3e0238b81b0a4632b52375608.jpg');
     background-position-x: top;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,7 +23,7 @@
     transform: translateX(-50%) translateY(-65%);
     font-family: 'Niramit', sans-serif;
     margin: 0;
-    font-size: 3.5em;
+    font-size: 3.3em;
     font-weight: 300;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -70,19 +70,10 @@ a:hover{
 /* Form */
 
 .body-form{
-    background-image: url('https://s1.1zoom.me/b5054/175/Forests_Spring_Trees_Trunk_tree_Trail_563011_1920x1080.jpg');
+    background-image: url('https://i.pinimg.com/originals/9b/5c/b7/9b5cb7b3e0238b81b0a4632b52375608.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
-}
-
-nav{
-    position: fixed;
-    width: 100%;
-    height: 100px;
-    box-sizing: border-box;
-    background: rgba(0, 50, 0, 0.8);
-    border-bottom: 1px solid #fff;
 }
 
 .container{
@@ -90,7 +81,7 @@ nav{
     margin: auto;
     overflow: auto;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.7);
     border-radius: 30px;
 }
 
@@ -147,6 +138,7 @@ label{
     border-radius: 7px;
     cursor: pointer;
     margin-bottom: 3px;
+    height: 33px;
 }
 
 label:hover{
@@ -173,7 +165,41 @@ label:hover{
     transform: scale(1.1);
 }
 
-#resultado{
-    font-size: 30px;
-    color: darkred;
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 480px) {
+
+    /* INDEX */
+
+    .h1-index{
+        font-size: 1.5em;
+    }
+
+    .h3-index{
+        font-size: 1em;
+        font-weight: 400;
+    }
+
+    a{
+        font-size: 12px;
+        width: 50%;
+    }
+
+    /* Form */
+
+    .container{
+        width: 70%;
+    }
+
+    h3{
+        font-weight: 300;
+        margin-top: 7px;
+        margin-bottom: 7px;
+    }
+
+    .btn-enviar{
+        width: 75%;
+        border-radius: 15px;
+    }
+
 }

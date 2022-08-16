@@ -10,25 +10,25 @@
 <body class="body-form">
     <main>
         <form class="container">
-            <fieldset class="fieldset-one">
+            <fieldset class="fieldset-one" id="fone">
                 <h3>1 - Medio de Transporte mas utilizado.</h3>
-                <label>
-                    <input type="radio" value="1" name="vehicle"> Transporte Publico
+                <label for="tp">
+                    <input type="radio" value="bus" name="vehicle" id="tp">Transporte Publico
                 </label>
-                <label>
-                    <input type="radio" value="2" name="vehicle"> Vehiculo Propio Naftero
+                <label for="vpn">
+                    <input type="radio" value="naphthacar" name="vehicle" id="vpn">Vehiculo Propio Naftero                    
                 </label>
-                <label>
-                    <input type="radio" value="3" name="vehicle"> Vehiculo Propoio Diesel
+                <label for="vpd">
+                    <input type="radio" value="dieselcar" name="vehicle" id="vpd">Vehiculo Propio Diesel                    
                 </label>
-                <label>
-                    <input type="radio" value="4" name="vehicle"> Vehiculo Propoio Electrico
+                <label for="vpe">
+                    <input type="radio" value="electriccar" name="vehicle" id="vpe">Vehiculo Propio Electrico                    
                 </label>
-                <label>
-                    <input type="radio" value="5" name="vehicle"> Motocicleta
+                <label for="mt">
+                    <input type="radio" value="motorbike" name="vehicle" id="mt">Motocicleta
                 </label>
-                <label>
-                    <input type="radio" value="6" name="vehicle"> Bicicleta
+                <label for="bc">
+                    <input type="radio" value="bike" name="vehicle" id="bc">Bicicleta        
                 </label>
             </fieldset>
             <fieldset class="fieldset-two">
@@ -49,51 +49,43 @@
             <fieldset class="fieldset-three">
                 <h3>3 - Seleccione los electrodomesticos y la cantidad de estos que posee en su casa(Puede marcar varios).</h3>
                 <label>
-                    <input type="checkbox" value="fridge" name="domesticAppliances"> Heladera
-                    <details>
-                        <summary>Cantidad</summary>
-                        <input type="radio" value="0" name="amount" id="frcero"> 0
-                        <input type="radio" value="1" name="amount" id="frone"> 1
-                        <input type="radio" value="2" name="amount" id="frtwo"> 2
-                        <input type="radio" value="3" name="amount" id="frthree"> 3
-                        <input type="radio" value="5" name="amount" id="frmtt"> +3
-                    </details>
+                    <input type="checkbox" value="fridge" name="domesticAppliances" id="aaa"> Heladera
                 </label>
                 <label>
-                    <input type="checkbox" value="washingMAchine" name="domesticAppliances"> Lavarropas
+                    <input type="checkbox" value="washingMachine" name="domesticAppliances" id="bbb"> Lavarropas
                 </label>
                 <label>
-                    <input type="checkbox" value="dishWasher" name="domesticAppliances"> Lavavajilla
+                    <input type="checkbox" value="dishWasher" name="domesticAppliances" id="ccc"> Lavavajilla
                 </label>
                 <label>
-                    <input type="checkbox" value="clothesDryer" name="domesticAppliances"> Secarropas
+                    <input type="checkbox" value="clothesDryer" name="domesticAppliances" id="ddd"> Secarropas
                 </label>
                 <label>
-                    <input type="checkbox" value="tv" name="domesticAppliances"> Televisor
+                    <input type="checkbox" value="tv" name="domesticAppliances" id="eee"> Televisor
                 </label>
                 <label>
-                    <input type="checkbox" value="pc" name="domesticAppliances"> Computadora
+                    <input type="checkbox" value="pc" name="domesticAppliances" id="fff"> Computadora
                 </label>
                 <label>
-                    <input type="checkbox" value="sterep" name="domesticAppliances"> Equipo de Musica
+                    <input type="checkbox" value="stereo" name="domesticAppliances" id="ggg"> Equipo de Musica
                 </label>
             </fieldset>
             <fieldset class="fieldset-four">
                 <h3>4 - Alimentos consumidos preferentemente.</h3>
                 <label>
-                    <input type="radio" value="1" name="nutrition"> Origen Animal
+                    <input type="radio" value="animal" name="nutrition"> Origen Animal
                 </label>
                 <label>
-                    <input type="radio" value="2" name="nutrition"> Origen Vegetal
+                    <input type="radio" value="vegetal" name="nutrition"> Origen Vegetal
                 </label>
                 <label>
-                    <input type="radio" value="3" name="nutrition"> Ultra Procesados
+                    <input type="radio" value="ultraprocessed" name="nutrition"> Ultra Procesados
                 </label>
                 <label>
-                    <input type="radio" value="4" name="nutrition"> De Proximidad
+                    <input type="radio" value="proximity" name="nutrition"> De Proximidad
                 </label>
                 <label>
-                    <input type="radio" value="5" name="nutrition"> Importados
+                    <input type="radio" value="imported" name="nutrition"> Importados
                 </label>
             </fieldset>
             <fieldset class="fieldset-five">
