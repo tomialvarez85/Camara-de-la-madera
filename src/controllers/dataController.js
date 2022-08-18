@@ -18,7 +18,7 @@ const createData = async (req, res) =>{
         !body.plantedTrees)
 
         {
-            res.send("send the data for all fields !");
+            return res.status(406).send("Some fields are missing or empty");
         }
     
 
@@ -31,12 +31,27 @@ const createData = async (req, res) =>{
     };
 
     
-    
     var vehicleEmission = co2calculator.calculateVehicleCO2(newData.vehicle, newData.distance)
+
+    if (vehicleEmission == 'error') {
+        return res.status(406).send('This car option is not valid')
+    };
 
     var domesticAppliancesEmission = co2calculator.calculateDomesticAppliancesCO2(newData.domesticAppliances)
 
+    if (domesticAppliancesEmission == 'error'){
+        return res.status(406).send('The amount of each domesticAppliances must be a number')
+    }
+
     var nutritionEmission = co2calculator.calculateNutritionCO2(newData.nutrition)
+
+    if (nutritionEmission == 'error'){
+        return res.status(406).send('The nutrition type sent is not valid')
+    }
+
+    if (isNaN(newData.plantedTrees)){
+        return res.status(406).send('The amount of planted trees must be a number')
+    }
 
     var emissionContrarested = newData.plantedTrees * 40
     var totalEmission = (vehicleEmission + domesticAppliancesEmission + nutritionEmission ) - emissionContrarested
@@ -67,7 +82,7 @@ const createData = async (req, res) =>{
         fs.unlinkSync(pdfPath)
             console.log("file deleted from API server")
       } catch(err) {
-        console.error("error deleting file from API server: " + err)
+            console.error("error deleting file from API server: " + err)
       }
     };
 
