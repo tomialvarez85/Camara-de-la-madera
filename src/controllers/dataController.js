@@ -30,7 +30,6 @@ const createData = async (req, res) =>{
         plantedTrees : body.plantedTrees
     };
 
-    
     var vehicleEmission = co2calculator.calculateVehicleCO2(newData.vehicle, newData.distance)
 
     if (vehicleEmission == 'error') {
@@ -85,7 +84,6 @@ const createData = async (req, res) =>{
             console.error("error deleting file from API server: " + err)
       }
     };
-
 
 module.exports = {
     createData,
