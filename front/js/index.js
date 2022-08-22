@@ -101,19 +101,35 @@ btnShow.addEventListener('click', function (e) {
 
     console.log(dict);
 
-    /*
-    const requeriments = {
-        method : 'POST',
-        mode : 'no-cors',
-        headers : {
-            'Content-Type' : 'application/x-www-form-urlencoded'
-        },
-        body : JSON.stringify(dict)
-    };
+    document.getElementById('output').style.display = 'block';
+
+    let obj;
+
+    let serverurl;
+
+    fetch('http://54.94.99.97:3000/api/v1/data/', {  
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(dict)
+    }) 
+    .then(res => res.json())
+    .then(data => obj = data)
+    .then(function(data) {
+        //console.log(obj);
+        serverurl = data.objectURL;
+        console.log(serverurl);
+        let qrcode = new QRCode("output", {
+            text: serverurl,
+            width: 177,
+            height: 177,
+            colorDark : "#990000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+    });
 
     setTimeout(function(){
         window.location.replace("file:///home/tomas/huellacarbono/index.html");
-    }, 7000);*/
-
+    }, 30000);
 
 });
