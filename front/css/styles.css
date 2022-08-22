@@ -77,6 +77,8 @@ a:hover{
 }
 
 .container{
+    margin-top: 20px;
+    margin-bottom: 20px;
     width: 50%;
     margin: auto;
     overflow: auto;
@@ -172,7 +174,7 @@ label:hover{
     /* INDEX */
 
     .h1-index{
-        font-size: 1.5em;
+        font-size: 1.3em;
     }
 
     .h3-index{
