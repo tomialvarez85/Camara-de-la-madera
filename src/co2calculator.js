@@ -30,7 +30,7 @@ function calculateVehicleCO2(vehicle, distance){
         return Math.trunc(result)
     }
     else{
-        res.status(406).send({ status : "ERROR", info : "The info sent doesnt match any possible vehicle option", vehicle : newData.vehicle});
+        return('error');
     }
     
 };
@@ -46,6 +46,16 @@ function calculateDomesticAppliancesCO2(value){
     const computerEmission = 1.9
     const stereoEmission = 1.1
     
+    if(isNaN(value[0].amount)||
+        isNaN(value[1].amount)||
+        isNaN(value[2].amount)||
+        isNaN(value[3].amount)||
+        isNaN(value[4].amount)||
+        isNaN(value[5].amount)||
+        isNaN(value[6].amount))
+    {
+        return('error')
+    }
     var total = 0
     var fridgeAmount = value[0].amount
     var washingmachineAmount = value[1].amount
@@ -106,8 +116,7 @@ function calculateNutritionCO2(value){
         return Math.trunc(result)
     }
     else{
-        res.status(406).send({ status : "ERROR", info : "The info sent doesnt match any possible nutrition option", nutrition : newData.nutrition});
-
+        return('error')
     }
 };
 
