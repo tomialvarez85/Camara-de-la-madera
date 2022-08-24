@@ -73,17 +73,21 @@ const createData = async (req, res) =>{
     await pdfGenerator();
     var amazonResponse = await awsuploader.uploadPdfToS3(pdfid)
     console.log(amazonResponse)
-    res.send({ objectURL: amazonResponse.Location});
+    
+    //delete pdf from server (is already allowed in the s3 bucket)
     
 
-    //delete pdf from server (is already allowed in the s3 bucket)
+    
     try {
         fs.unlinkSync(pdfPath)
-            console.log("file deleted from API server")
+            console.log("pdf deleted from API server")
+            res.send({ objectURL: amazonResponse.Location});
       } catch(err) {
             console.error("error deleting file from API server: " + err)
+            res.send({ objectURL: amazonResponse.Location});
       }
-    };
+};
+    
 
 module.exports = {
     createData,
