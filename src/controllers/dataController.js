@@ -73,7 +73,10 @@ const createData = async (req, res) =>{
     await pdfGenerator();
     var amazonResponse = await awsuploader.uploadPdfToS3(pdfid)
     console.log(amazonResponse)
+    
     //delete pdf from server (is already allowed in the s3 bucket)
+    
+
     
     try {
         fs.unlinkSync(pdfPath)
