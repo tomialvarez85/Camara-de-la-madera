@@ -101,19 +101,60 @@ btnShow.addEventListener('click', function (e) {
 
     console.log(dict);
 
-    /*
-    const requeriments = {
-        method : 'POST',
-        mode : 'no-cors',
-        headers : {
-            'Content-Type' : 'application/x-www-form-urlencoded'
-        },
-        body : JSON.stringify(dict)
-    };
+    document.getElementById('bodyform').style = 'backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.3);';
+    document.getElementById('output').style.display = 'block';
+    document.getElementById('btnenviar').style.display = 'none';
+    document.getElementById('decobtn').style.display = 'block';
+    document.getElementById('decoh').style.display = 'block';
+    document.getElementById('containerform').style.display = 'none';
+    document.getElementById('replacedp').style.display = 'block';
+    document.getElementById('middle').style.display = 'block';
 
-    setTimeout(function(){
+
+
+    var timeleft = 35;
+    var downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            window.location.replace("file:///home/tomas/huellacarbono/index.html");
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft;
+        }
+        timeleft -= 1;
+    }, 1000);
+
+
+    let obj;
+
+    let serverurl;
+
+    fetch('https://54.94.99.97/api/v1/data/', {  
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(dict)
+    }) 
+    .then(res => res.json())
+    .then(data => obj = data)
+    .then(function(data) {
+        //console.log(obj);
+        serverurl = data.objectURL;
+        console.log(serverurl);
+        let qrcode = new QRCode("output", {
+            text: serverurl,
+            width: 177,
+            height: 177,
+            colorDark : "#000000",
+            colorLight : "#ffffff",
+            correctLevel : QRCode.CorrectLevel.H
+        });
+        document.getElementById('replacedp').style.display = 'none';
+        document.getElementById('middle').style.display = 'none';
+        document.getElementById('decooutput').style.display = 'block';
+        document.getElementById('countdown').style.display = 'block';
+    });
+
+    /*setTimeout(function(){
         window.location.replace("file:///home/tomas/huellacarbono/index.html");
-    }, 7000);*/
-
+    }, 30000);*/
 
 });

@@ -2,15 +2,15 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HDCform</title>
+    <title>Carbon Footprint</title>
 </head>
-<body class="body-form">
+<body class="body-form" id="bodyform">
     <main>
-        <form class="container">
+        <form class="container" id="containerform">
             <fieldset class="fieldset-one" id="fone">
                 <h3>1 - ¿Cual es su medio de transporte mas utilizado?</h3>
                 <label for="tp">
@@ -90,7 +90,7 @@
                 </label>
             </fieldset>
             <fieldset class="fieldset-five">
-                <h3>5 - ¿Cuantos arboles ha plantado?</h3>
+                <h3>5 - ¿Cuantos arboles ha plantado este año?</h3>
                 <label>
                     <input type="radio" value="0" name="plantedTrees"> Ninguno
                 </label>
@@ -103,10 +103,30 @@
                 <label>
                     <input type="radio" value="15" name="plantedTrees"> Mas de 10
                 </label>
+                <label>
+                    <input type="radio" value="50" name="plantedTrees"> Mas de 50
+                </label>
             </fieldset>
-            <button class="btn-enviar">Enviar</button>
+            <button class="btn-enviar" id="btnenviar">Enviar</button>
         </form>
     </main>
+    <h1 class="deco-h1" id="decoh">Escaneá y obtené tus resultados</h1>
+    <div class="deco-qr" id="decooutput">
+        <div class="qr-container" id="output"></div>
+    </div>
+    <a href="../index.html" class="deco-btn" id="decobtn">Volver a Inicio</a>
+    <div id="countdown"></div>
+    <p class="replaced-p" id="replacedp">35</p>
     <script src="../js/index.js"></script>
+    <div class="middle" id="middle">
+        <div class="bar bar1"></div>
+        <div class="bar bar2"></div>
+        <div class="bar bar3"></div>
+        <div class="bar bar4"></div>
+        <div class="bar bar5"></div>
+        <div class="bar bar6"></div>
+        <div class="bar bar7"></div>
+        <div class="bar bar8"></div>
+    </div>
 </body>
 </html>
