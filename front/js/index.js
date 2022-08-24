@@ -101,13 +101,34 @@ btnShow.addEventListener('click', function (e) {
 
     console.log(dict);
 
+    document.getElementById('bodyform').style = 'backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.3);';
     document.getElementById('output').style.display = 'block';
+    document.getElementById('btnenviar').style.display = 'none';
+    document.getElementById('decobtn').style.display = 'block';
+    document.getElementById('decoh').style.display = 'block';
+    document.getElementById('containerform').style.display = 'none';
+    document.getElementById('replacedp').style.display = 'block';
+    document.getElementById('middle').style.display = 'block';
+
+
+
+    var timeleft = 35;
+    var downloadTimer = setInterval(function(){
+        if(timeleft <= 0){
+            clearInterval(downloadTimer);
+            window.location.replace("file:///home/tomas/huellacarbono/index.html");
+        } else {
+        document.getElementById("countdown").innerHTML = timeleft;
+        }
+        timeleft -= 1;
+    }, 1000);
+
 
     let obj;
 
     let serverurl;
 
-    fetch('http://54.94.99.97:3000/api/v1/data/', {  
+    fetch('https://54.94.99.97/api/v1/data/', {  
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(dict)
@@ -122,14 +143,18 @@ btnShow.addEventListener('click', function (e) {
             text: serverurl,
             width: 177,
             height: 177,
-            colorDark : "#990000",
+            colorDark : "#000000",
             colorLight : "#ffffff",
             correctLevel : QRCode.CorrectLevel.H
         });
+        document.getElementById('replacedp').style.display = 'none';
+        document.getElementById('middle').style.display = 'none';
+        document.getElementById('decooutput').style.display = 'block';
+        document.getElementById('countdown').style.display = 'block';
     });
 
-    setTimeout(function(){
+    /*setTimeout(function(){
         window.location.replace("file:///home/tomas/huellacarbono/index.html");
-    }, 30000);
+    }, 30000);*/
 
 });
