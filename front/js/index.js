@@ -102,14 +102,14 @@ btnShow.addEventListener('click', function (e) {
     console.log(dict);
 
     document.getElementById('bodyform').style = 'backdrop-filter: blur(10px); background-color: rgba(255, 255, 255, 0.3);';
+    document.getElementById('ukcontainer').style.display = 'flex';
     document.getElementById('output').style.display = 'block';
     document.getElementById('btnenviar').style.display = 'none';
     document.getElementById('decobtn').style.display = 'block';
     document.getElementById('decoh').style.display = 'block';
-    document.getElementById('containerform').style.display = 'none';
     document.getElementById('replacedp').style.display = 'block';
-    document.getElementById('middle').style.display = 'block';
-
+    const main = document.getElementById('mainid');
+    main.remove();
 
 
     var timeleft = 35;
@@ -125,7 +125,6 @@ btnShow.addEventListener('click', function (e) {
 
 
     let obj;
-
     let serverurl;
 
     fetch('https://54.94.99.97/api/v1/data/', {  
@@ -148,8 +147,7 @@ btnShow.addEventListener('click', function (e) {
             correctLevel : QRCode.CorrectLevel.H
         });
         document.getElementById('replacedp').style.display = 'none';
-        document.getElementById('middle').style.display = 'none';
-        document.getElementById('decooutput').style.display = 'block';
+        document.getElementById('decooutput').style.display = 'flex';
         document.getElementById('countdown').style.display = 'block';
     });
 

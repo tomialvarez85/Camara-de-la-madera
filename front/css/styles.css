@@ -32,7 +32,7 @@
     font-family: 'Niramit', sans-serif;
     margin: 0;
     font-size: 3.2em;
-    font-weight: 200;
+    font-weight: 250;
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 1px 1px 1px rgb(0 0 0 / 15%);
@@ -75,15 +75,22 @@
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#mainid{
+    height: 100%;
+    width: 100%;
+    display: flex;
 }
 
 .container{
-    margin-top: 20px;
-    margin-bottom: 20px;
     width: 50%;
     margin: auto;
     overflow: auto;
-    height: 100vh;
+    height: 95vh;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 15px;
     display: block;
@@ -99,32 +106,32 @@
 
 .fieldset-one{
     text-align: left;
-    border-radius: 7px;
     color: #000;
+    border: 0;
 }
 
 .fieldset-two{
-    border-radius: 7px;
     margin-top: 1px;
     color: #000;
+    border: 0;
 }
 
 .fieldset-three{
-    border-radius: 7px;
     margin-top: 1px;
     color: #000;
+    border: 0;
 }
 
 .fieldset-four{
-    border-radius: 7px;
     margin-top: 1px;
     color: #000;
+    border: 0;
 }
 
 .fieldset-five{
-    border-radius: 7px;
     margin-top: 1px;
     color: #000;
+    border: 0;
 }
 
 h3{
@@ -170,11 +177,18 @@ label:hover{
     transform: scale(1.1);
 }
 
+.unknown-container{
+    text-align: center;
+    display: none;
+    height: 100vh;
+    background-color: transparent;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
 .deco-h1{
     display: none;
-    position: absolute;
-    top: 16%;
-    left: 29%;
     font-family: 'Niramit', sans-serif;
     font-size: 2em;
     font-weight: 300;
@@ -182,33 +196,30 @@ label:hover{
     text-shadow: 1px 1px 1px rgb(0 0 0 / 15%);
     color: #FFF;
     white-space: nowrap;
+    margin-bottom: 60px;
 }
 
 .deco-qr{
     display: none;
-    position: absolute;
-    top: 28%;
-    left: 42%;
     height: 201px;
     width: 201px;
     background-color: #fff;
+    margin-bottom: 60px;
+    align-self: center;
+    align-content: center;
+    justify-content: center;
 }
 
 .qr-container{
     display: none;
-    position: absolute;
-    top: 12px;
-    left: 12px;
     background-color: #fff;
     height: 177px;
     width: 177px;
+    align-self: center;
 }
 
 .deco-btn{
     display: none;
-    position: absolute;
-    top: 65%;
-    left: 42%;
     color: #fff;
     text-decoration: none;
     font-family: 'Niramit', sans-serif;
@@ -221,6 +232,8 @@ label:hover{
     text-align: center;
     border-radius: 15px;
     cursor: pointer;
+    align-self: center;
+    margin-bottom: 20px;
 }
 
 .deco-btn:hover{
@@ -229,9 +242,6 @@ label:hover{
 
 #countdown{
     display: none;
-    position: absolute;
-    top: 80%;
-    left: 48%;
     font-family: 'Niramit', sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -240,9 +250,6 @@ label:hover{
 
 .replaced-p{
     display: none;
-    position: absolute;
-    top: 80%;
-    left: 48%;
     font-family: 'Niramit', sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -250,13 +257,11 @@ label:hover{
 }
 
 
-.middle {
+/*.middle {
     display: none;
-    top: 50%;
-    left: 50%;
     transform: translate(-50%, -50%);
-    position: absolute;
 }
+
 .bar{
     width: 10px;
     height: 70px;
@@ -265,9 +270,10 @@ label:hover{
     transform-origin: bottom center;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
-    /*   box-shadow:5px 10px 20px inset rgba(255,23,25.2); */
+       box-shadow:5px 10px 20px inset rgba(255,23,25.2); 
     animation: loader 1.2s linear infinite;
 }
+
 .bar1 {
     animation-delay: 0.1s;
 }
@@ -305,7 +311,7 @@ label:hover{
       transform: scaleY(0.1);
       background: transparent;
     }
-}
+}*/
 
 /* MEDIA QUERIES */
 
@@ -353,6 +359,29 @@ label:hover{
         width: 75%;
         border-radius: 15px;
         display: block;
+    }
+    
+    .deco-h1{
+        font-size: 1.2em;
+        font-weight: 200;
+        margin-bottom: 40px;
+    }
+    
+    .deco-qr{
+        margin-bottom: 40px;
+    }
+    
+    .deco-btn{
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+    
+    #countdown{
+        font-size: 25px;
+    }
+    
+    .replaced-p{
+        font-size: 25px;
     }
 
 }
