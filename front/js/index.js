@@ -139,7 +139,7 @@ btnShow.addEventListener('click', function (e) {
         var downloadTimer = setInterval(function(){
             if(timeleft <= 0){
                 clearInterval(downloadTimer);
-                window.location.replace("file:///home/tomas/huellacarbono/index.html");
+                window.location.replace("/index.html");
             } else {
             document.getElementById("countdown").innerHTML = timeleft;
             }
