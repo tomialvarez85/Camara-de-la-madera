@@ -12,7 +12,7 @@
     <main id="mainid">
         <form class="container" id="containerform">
             <fieldset class="fieldset-one" id="fone">
-                <h3>1 - ¿Cual es su medio de transporte mas utilizado?</h3>
+                <legend aria-label="required">1 - ¿Cual es su medio de transporte mas utilizado?</legend>
                 <label for="tp">
                     <input type="radio" value="bus" name="vehicle" id="tp"> Transporte Publico
                 </label>
@@ -34,7 +34,7 @@
             </fieldset>
             <hr>
             <fieldset class="fieldset-two">
-                <h3>2 - ¿Cuanta es su distancia recorrida semanalmente?</h3>
+                <legend aria-label="required">2 - ¿Cuanta es su distancia recorrida semanalmente?</legend>
                 <label>
                     <input type="radio" value="25" name="distance"> 0-50km
                 </label>
@@ -50,7 +50,7 @@
             </fieldset>
             <hr>
             <fieldset class="fieldset-three">
-                <h3>3 - Indique los electrodomesticos que posee(Puede marcar varios).</h3>
+                <legend>3 - Indique los electrodomesticos que posee(Puede marcar varios).</legend>
                 <label>
                     <input type="checkbox" value="fridge" name="domesticAppliances" id="fridgeid"> Heladera
                 </label>
@@ -75,7 +75,7 @@
             </fieldset>
             <hr>
             <fieldset class="fieldset-four">
-                <h3>4 - ¿Cuales son sus alimentos consumidos preferentemente?</h3>
+                <legend aria-label="required">4 - ¿Cuales son sus alimentos consumidos preferentemente?</legend>
                 <label>
                     <input type="radio" value="animal" name="nutrition"> Origen Animal
                 </label>
@@ -93,8 +93,8 @@
                 </label>
             </fieldset>
             <hr>
-            <fieldset class="fieldset-five">
-                <h3>5 - ¿Cuantos arboles ha plantado este año?</h3>
+            <fieldset class="fieldset-five" aria-required="true">
+                <legend>5 - ¿Cuantos arboles ha plantado este año?</legend>
                 <label>
                     <input type="radio" value="0" name="plantedTrees"> Ninguno
                 </label>
@@ -107,9 +107,6 @@
                 <label>
                     <input type="radio" value="15" name="plantedTrees"> Mas de 10
                 </label>
-                <label>
-                    <input type="radio" value="50" name="plantedTrees"> Mas de 50
-                </label>
             </fieldset>
             <button class="btn-enviar" id="btnenviar">Enviar</button>
         </form>
@@ -121,7 +118,7 @@
         </div>
         <a href="../index.html" class="deco-btn" id="decobtn">Volver a Inicio</a>
         <div id="countdown"></div>
-        <p class="replaced-p" id="replacedp">35</p>
+        <p class="replaced-p" id="replacedp">30</p>
     </div>
     <script src="../js/index.js"></script>
 </body>
