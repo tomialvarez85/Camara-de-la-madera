@@ -60,7 +60,17 @@ const createData = async (req, res) =>{
     console.log("total User emission: " + totalEmission + " CO2 kg");
     console.log("User should Plant : " + treesShouldPlant + " trees");
 
-    var compiled = ejs.compile(fs.readFileSync(path.resolve(__dirname, '../../public/pdfTemplate.html'),'utf8'));
+    if (treesShouldPlant <= 99){
+        var option = ('angelTemplate')
+    }
+    else if (treesShouldPlant > 99 && treesShouldPlant <=150){
+        var option = ('respetuosoTemplate')
+    }
+    else if (treesShouldPlant > 150 ){
+        var option = ('terroristeTemplate')
+    }
+    
+    var compiled = ejs.compile(fs.readFileSync(path.resolve(__dirname, `../../public/${option}.html`),'utf8'));
     var html = compiled({ emission : totalEmission, treesShouldPlant : treesShouldPlant})
     var pdfid = uuid.v4()
     pdfPath = (`./pdf/${pdfid}.pdf`)

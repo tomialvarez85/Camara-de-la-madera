@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angel del Medioambiente</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        .container{
+            background-image: url('https://nuevitocecf4c04-af40-4f35-b878-4cdae495101a.s3.amazonaws.com/fondofinal.jpg');
+            width: 620px;
+            height: 842px;
+            display: flex;
+            justify-content: center;
+            margin: auto;
+        }
+
+        .bg{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            background-color: #0FBB60;
+            background-repeat: no-repeat;
+            height: 60%;
+            width: 75%;
+            border-bottom-left-radius: 50px;
+            margin-left : 67px;
+            border-bottom-right-radius: 50px;
+        }
+
+        .primero{
+            text-align: center;
+            padding-top: 10px;
+            height: 20%;
+            width: 100%;
+        }
+
+        .segundo{
+            text-align: center;
+            height: 15%;
+            width: 100%;
+        }
+
+        .p-one{
+            margin-top: 40px;
+            font-family: 'Ubuntu', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+
+        .p-two{
+            font-family: 'Ubuntu', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+
+        .tercero{
+            height: 80px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1{
+            font-family: 'Ubuntu', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 60px;
+        }
+
+        .cuarto{
+            text-align: center;
+            height: 20px;
+            margin-bottom: 35px;
+            width: 100%;
+        }
+
+        .quinto{
+            text-align: center;
+            height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-bottom : 50px;
+        }
+
+        .p-three{
+            font-family: 'Ubuntu', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 17px;
+            word-spacing: 5px;
+            letter-spacing: 2px;
+        }
+
+        .img-angel{
+            margin-top: 20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        h3{
+            font-family: 'Ubuntu', sans-serif;
+            color: #fff;
+            font-weight: 700;
+            font-size: 20px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="bg">
+            <div class="primero">
+                <p class="p-one">Tu actividad diaria genera<%= emission%> <br>X kilos de CO2 por año.</p>
+            </div>
+            <div class="segundo">
+                <p class="p-two">Para compensar la emisión<br>deberías plantar</p>
+            </div>
+            <div class="tercero">
+                <h1><%= treesShouldPlant%></h1>
+            </div>
+            <div class="cuarto">
+                <h3>ARBOLES</h3>
+            </div>
+            <div class="quinto">
+                <p class="p-three">Usted es un<br>Angel del Medio Ambiente</p>
+                <img class="img-angel" src="https://o.remove.bg/downloads/ba5fd850-e620-4b48-8119-cb98b41b11ee/download-removebg-preview.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+margin
