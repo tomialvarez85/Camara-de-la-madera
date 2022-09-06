@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carbon Footprint</title>
+</head>
+<body class="body-form" id="bodyform">
+    <main id="mainid">
+        <form class="container" id="containerform">
+            <fieldset class="fieldset-one" id="fone">
+                <legend aria-label="required">1 - ¿Cual es su medio de transporte mas utilizado?</legend>
+                <label for="tp">
+                    <input type="radio" value="bus" name="vehicle" id="tp"> Transporte Publico
+                </label>
+                <label for="vpn">
+                    <input type="radio" value="naphthacar" name="vehicle" id="vpn"> Vehiculo Propio Naftero                    
+                </label>
+                <label for="vpd">
+                    <input type="radio" value="dieselcar" name="vehicle" id="vpd">  Vehiculo Propio Diesel                    
+                </label>
+                <label for="vpe">
+                    <input type="radio" value="electriccar" name="vehicle" id="vpe">    Vehiculo Propio Electrico                    
+                </label>
+                <label for="mt">
+                    <input type="radio" value="motorbike" name="vehicle" id="mt">   Motocicleta
+                </label>
+                <label for="bc">
+                    <input type="radio" value="bike" name="vehicle" id="bc">    Bicicleta        
+                </label>
+            </fieldset>
+            <hr>
+            <fieldset class="fieldset-two">
+                <legend aria-label="required">2 - ¿Cuanta es su distancia recorrida semanalmente?</legend>
+                <label>
+                    <input type="radio" value="25" name="distance"> 0-50km
+                </label>
+                <label>
+                    <input type="radio" value="75" name="distance"> 50-100km
+                </label>
+                <label>
+                    <input type="radio" value="125" name="distance"> 100-150km
+                </label>
+                <label>
+                    <input type="radio" value="200" name="distance"> Mas de 150km
+                </label>
+            </fieldset>
+            <hr>
+            <fieldset class="fieldset-three">
+                <legend>3 - Indique los electrodomesticos que posee(Puede marcar varios).</legend>
+                <label>
+                    <input type="checkbox" value="fridge" name="domesticAppliances" id="fridgeid"> Equipo de aire acondicionado
+                </label>
+                <label>
+                    <input type="checkbox" value="washingMachine" name="domesticAppliances" id="washingMachineid"> Lavarropas
+                </label>
+                <label>
+                    <input type="checkbox" value="dishWasher" name="domesticAppliances" id="dishWasherid"> Lavavajilla
+                </label>
+                <label>
+                    <input type="checkbox" value="clothesDryer" name="domesticAppliances" id="clothesDryerid"> Secarropas
+                </label>
+                <label>
+                    <input type="checkbox" value="tv" name="domesticAppliances" id="tvid"> Televisor
+                </label>
+                <label>
+                    <input type="checkbox" value="pc" name="domesticAppliances" id="pcid"> Computadora
+                </label>
+                <label>
+                    <input type="checkbox" value="stereo" name="domesticAppliances" id="stereoid"> Equipo de Musica
+                </label>
+            </fieldset>
+            <hr>
+            <fieldset class="fieldset-four">
+                <legend aria-label="required">4 - ¿Cuales son sus alimentos consumidos preferentemente?</legend>
+                <label>
+                    <input type="radio" value="animal" name="nutrition"> Origen Animal
+                </label>
+                <label>
+                    <input type="radio" value="vegetal" name="nutrition"> Origen Vegetal
+                </label>
+                <label>
+                    <input type="radio" value="ultraprocessed" name="nutrition"> Ultra Procesados
+                </label>
+                <label>
+                    <input type="radio" value="proximity" name="nutrition"> De Proximidad
+                </label>
+                <label>
+                    <input type="radio" value="imported" name="nutrition"> Importados
+                </label>
+            </fieldset>
+            <hr>
+            <fieldset class="fieldset-five" aria-required="true">
+                <legend>5 - ¿Cuantos arboles ha plantado este año?</legend>
+                <label>
+                    <input type="radio" value="0" name="plantedTrees"> Ninguno
+                </label>
+                <label>
+                    <input type="radio" value="3" name="plantedTrees"> 0-5
+                </label>
+                <label>
+                    <input type="radio" value="7" name="plantedTrees"> 5-10
+                </label>
+                <label>
+                    <input type="radio" value="15" name="plantedTrees"> Mas de 10
+                </label>
+            </fieldset>
+            <button class="btn-enviar" id="btnenviar">Enviar</button>
+        </form>
+    </main>
+    <div class="unknown-container" id="ukcontainer">
+        <h1 class="deco-h1" id="decoh">Escaneá y obtené tus resultados</h1>
+        <div class="deco-qr" id="decooutput">
+            <div class="qr-container" id="output"></div>
+        </div>
+        <a href="../index.html" class="deco-btn" id="decobtn">Volver a Inicio</a>
+        <div id="countdown"></div>
+        <p class="replaced-p" id="replacedp">45</p>
+        <div class="middle" id="middle">
+            <div class="bar bar1"></div>
+            <div class="bar bar2"></div>
+            <div class="bar bar3"></div>
+            <div class="bar bar4"></div>
+            <div class="bar bar5"></div>
+            <div class="bar bar6"></div>
+            <div class="bar bar7"></div>
+            <div class="bar bar8"></div>
+        </div>
+    </div>
+    <script src="../js/index.js"></script>
+</body>
+</html>
